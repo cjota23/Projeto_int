@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Confeitaria Delícias</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: #8e44ad;
+            padding: 20px 0;
+        }
+
+        .header .logo img {
+            width: 150px;
+        }
+
+        h1,
+        h2 {
+            color: #8e44ad;
+        }
+
+        .about-us {
+            padding: 50px 0;
+            background-color: #fff;
+        }
+
+        .about-us .intro-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-description {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .about-description h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .about-description p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .about-description ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .about-description ul li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #8e44ad;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-description {
+                text-align: center;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="Logo Confeitaria Delícias">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-us">
+            <div class="container">
+                <h1>Sobre Nós</h1>
+                <p class="intro-text">
+                    Bem-vindo à Confeitaria Delícias, onde cada doce é feito com carinho, qualidade e paixão. Nosso compromisso é proporcionar aos nossos clientes uma experiência única, oferecendo produtos frescos e de alta qualidade.
+                </p>
+
+                <div class="about-section">
+                    <div class="about-image">
+                        <img src="assets/images/confeitaria.jpg" alt="Imagem da Confeitaria">
+                    </div>
+                    <div class="about-description">
+                        <h2>Nosso Propósito</h2>
+                        <p>
+                            Desde a nossa fundação, nosso objetivo é criar doces que tragam alegria e encantem o paladar. Trabalhamos com ingredientes selecionados e prezamos pela excelência em cada etapa da produção.
+                        </p>
+
+                        <h2>Missão e Valores</h2>
+                        <ul>
+                            <li><strong>Missão:</strong> Levar felicidade e sabor para todos, com produtos frescos e feitos com amor.</li>
+                            <li><strong>Qualidade:</strong> Usamos apenas ingredientes premium, garantindo o melhor para nossos clientes.</li>
+                            <li><strong>Compromisso:</strong> Comprometidos com a entrega de uma experiência gastronômica única e memorável.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Confeitaria Delícias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
