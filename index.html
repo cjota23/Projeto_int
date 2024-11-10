@@ -5,11 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choconuts - Materializando seus sonhos</title>
-
-  <!-- link css -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- Otimiza a página fazendo o download antes de ser visualizada -->
   <link rel="preload" href="./assets/images/hero.jpeg" as="image">
 </head>
 
@@ -31,13 +27,8 @@
   
       <!-- Logo principal -->
       <a href="#" class="logo">
-        <img src="./assets/images/logo.png" width="160" height="50" alt="Footcap logo">
+        <img src="./assets/images/logo.svg" width="240" height="75" alt="Choconuts logo">
       </a>
-  
-      <!-- Botão para abrir o menu móvel -->
-      <button class="nav-open-btn" data-nav-open-btn aria-label="Abrir Menu">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
   
       <!-- Menu de navegação -->
       <nav class="navbar" data-navbar>
@@ -46,7 +37,7 @@
         </button>
   
         <a href="#" class="logo">
-          <img src="./assets/images/logo.png" width="160" height="50" alt="Choconuts logo">
+          <img src="./assets/images/logo.png" width="200" height="50" alt="Choconuts logo">
         </a>
   
         <!-- Links de navegação -->
@@ -94,26 +85,26 @@
     <article>
 
   <!-- #HERO -->
-      <section id="inicio" class="section hero" style="background-image: url('./assets/images/hero.jpeg')">
+      <section id="inicio" class="section hero" style="background-image: url('./assets/images/hero.png')">
         <div class="container">
-          <h2 class="h1 hero-title">Conheça mais<strong>Sobre nosso trabalho</strong></h2>
+          <h2 class="h1 hero-title">Transformando açúcar <strong>em sorrisos!</strong> </h2>
           <p class="hero-text">
-            Competência, trabalho, confiança e qualidade. Choconuts, materializando sonhos.
+            Receitas caseiras feitas com muito amor e carinho especialmente para você!
           </p>
-          <button class="btn btn-primary">
-            <a href="sobre.html">Sobre nós</a>
+          <button href= carrin.html class="btn btn-primary">
+            <a>Sobre nós</a>
             <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
           </button>
         </div>
       </section>
 
-  <!-- #COLLECTION -->
+  <!-- #COLEÇÃO -->
       <section id="encomendas" class="section collection">
         <div class="container">
           <ul class="collection-list has-scrollbar">
             <li>
-              <div class="collection-card" style="background-image: url('./assets/images/bolo-casa.jpg')"> <!--Imagem do bolo de casamento-->
-                <h3 class="h4 card-title">Bolos para casamento</h3>
+              <div class="collection-card" style="background-image: url('./assets/images/6.png')">
+                <h3 class="h4 card-title">Casamento</h3>
                 <a href="#contato" class="btn btn-secondary">
                   <span>Encomende já</span>
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -122,8 +113,8 @@
             </li>
             <li>
 
-              <div class="collection-card" style="background-image: url('./assets/images/bolo-aniv.jpeg')">
-                <h3 class="h4 card-title">Bolos de aniversário</h3>
+              <div class="collection-card" style="background-image: url('./assets/images/7.png')">
+                <h3 class="h4 card-title">Aniversário</h3>
                 <a href="#contato" class="btn btn-secondary">
                   <span>Encomende já</span>
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -132,8 +123,8 @@
             </li>
             <li>
               
-              <div class="collection-card" style="background-image: url('./assets/images/bolo-perso.webp')">
-                <h3 class="h4 card-title">Personalizados</h3>
+              <div class="collection-card" style="background-image: url('./assets/images/8.png')">
+                <h3 class="h4 card-title">Caseiro</h3>
                 <a href="#contato" class="btn btn-secondary">
                   <span>Encomende já</span>
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -147,7 +138,7 @@
       <!-- #PRODUCT -->
       <section id="loja" class="section product">
         <div class="container">
-          <h2 class="h2 section-title">Produtos à venda</h2>
+          <h2 class="h2 section-title">Produtos a venda</h2>
 
           <!-- Filtro de produtos -->
           <ul class="filter-list">
@@ -164,7 +155,7 @@
               <button class="filter-btn" aria-label="Mostrar sobremesas">Sobremesas</button>
             </li>
             <li>
-              <button class="filter-btn" aria-label="Mostrar bolos">bolos</button>
+              <button class="filter-btn" aria-label="Mostrar bolos">Bolos</button>
             </li>
           </ul>
 
@@ -172,14 +163,21 @@
             <li class="product-item Doces Todos">
                 <div class="product-card" tabindex="0">
                     <figure class="card-banner">
-                        <img src="./assets/images/produto1.jpg" width="312" height="350" loading="lazy" alt="Brigadeiro" class="image-contain">
+                        <img src="./assets/images/2.png" width="312" height="350" loading="lazy" alt="Bolo" class="image-contain">
+                        <ul class="card-action-list">
+                          <li class="card-action-item">
+                            <button class="card-action-btn" aria-labelledby="card-label-1">
+                              <ion-icon name="cart-outline"></ion-icon>
+                            </button>
+                            <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
+                          </li>
                     </figure>
                     <div class="card-content">
                         <div class="card-cat">
-                            <a href="carrin.html" class="card-cat-link">Doces</a>
+                            <a href="carrin.html" class="card-cat-link">Bolos</a>
                         </div>
                         <h3 class="h3 card-title">
-                            <a href="carrin.html">Brigadeiro</a>
+                            <a href="carrin.html">Bolo de chocolate com nutella</a>
                         </h3>
                         <data class="card-price" value="19.90">R$ 19.90</data>
                     </div>
@@ -189,216 +187,118 @@
             <li class="product-item">
               <div class="product-card" tabindex="0">
                 <figure class="card-banner">
-                  <img src="./assets/images/product-2.jpg" width="312" height="350" loading="lazy"
-                    alt="Leather Mens Slipper" class="image-contain">
+                  <img src="./assets/images/3.png" width="312" height="350" loading="lazy"
+                    alt="bolo" class="image-contain">
                   <ul class="card-action-list">
                     <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-1">
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
                     </li>
                   </ul>
                 </figure>
                 <div class="card-content">
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Sports</a>
+                    <a href="#" class="card-cat-link">Bolos</a>
                   </div>
                   <h3 class="h3 card-title">
-                    <a href="#">Leather Mens Slipper</a>
+                    <a href="#">Bolo red velvet</a>
                   </h3>
-                  <data class="card-price" value="190.85">$190.85</data>
+                  <data class="card-price" value="29,99">$29,99</data>
                 </div>
               </div>
             </li>
             <li class="product-item">
               <div class="product-card" tabindex="0">
                 <figure class="card-banner">
-                  <img src="./assets/images/product-3.jpg" width="312" height="350" loading="lazy"
-                    alt="Simple Fabric Shoe" class="image-contain">
-                  <div class="card-badge">New</div>
+                  <img src="./assets/images/4.png" width="312" height="350" loading="lazy"
+                    alt="Bolo" class="image-contain">
+                  <div class="card-badge">Novo</div>
                   <ul class="card-action-list">
                     <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-1">
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
                     </li>
                   </ul>
                 </figure>
                 <div class="card-content">
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link">Bolos</a>
                   </div>
                   <h3 class="h3 card-title">
-                    <a href="#">Simple Fabric Shoe</a>
+                    <a href="#">Bolo de chocolate com bombom</a>
                   </h3>
-                  <data class="card-price" value="160.85">$160.85</data>
+                  <data class="card-price" value="29,99">R$29,99</data>
                 </div>
               </div>
             </li>
             <li class="product-item">
               <div class="product-card" tabindex="0">
                 <figure class="card-banner">
-                  <img src="./assets/images/product-4.jpg" width="312" height="350" loading="lazy"
-                    alt="Air Jordan 7 Retro " class="image-contain">
-                  <div class="card-badge"> -25%</div>
+                  <img src="./assets/images/10.png" width="312" height="350" loading="lazy"
+                    alt="Bolo" class="image-contain">
                   <ul class="card-action-list">
                     <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-1">
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
                     </li>
                   </ul>
                 </figure>
                 <div class="card-content">
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Sports</a>
+                    <a href="#" class="card-cat-link">Bolos</a>
                   </div>
                   <h3 class="h3 card-title">
-                    <a href="#">Air Jordan 7 Retro </a>
+                    <a href="#">Bolo de chocolate com cobertura de chocolate</a>
                   </h3>
-                  <data class="card-price" value="170.85">$170.85 <del>$200.21</del></data>
+                  <data class="card-price" value="20,00"> R$20,00</data>
                 </div>
               </div>
             </li>
             <li class="product-item">
               <div class="product-card" tabindex="0">
                 <figure class="card-banner">
-                  <img src="./assets/images/product-5.jpg" width="312" height="350" loading="lazy"
-                    alt="Nike Air Max 270 SE" class="image-contain">
-                  <div class="card-badge">New</div>
+                  <img src="./assets/images/5.png" width="312" height="350" loading="lazy"
+                    alt="Bolo" class="image-contain">
+                  <div class="card-badge">Novo</div>
                   <ul class="card-action-list">
                     <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-1">
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
                     </li>
                   </ul>
                 </figure>
                 <div class="card-content">
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link">Bolos</a>
                   </div>
                   <h3 class="h3 card-title">
-                    <a href="#">Nike Air Max 270 SE</a>
+                    <a href="#">Bolo de baunilha com cobertura de chocolate</a>
                   </h3>
-                  <data class="card-price" value="120.85">$120.85</data>
+                  <data class="card-price" value="20,00">R$20,00</data>
                 </div>
               </div>
             </li>
             <li class="product-item">
               <div class="product-card" tabindex="0">
                 <figure class="card-banner">
-                  <img src="./assets/images/product-6.jpg" width="312" height="350" loading="lazy"
-                    alt="Adidas Sneakers Shoes" class="image-contain">
+                  <img src="./assets/images/9.png" width="312" height="350" loading="lazy"
+                    alt="Bolo" class="image-contain">
                   <ul class="card-action-list">
                     <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-1">
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
                     </li>
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
-
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
-
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                    </li>
+ 
 
                   </ul>
                 </figure>
@@ -406,15 +306,14 @@
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link">Bolos</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Adidas Sneakers Shoes</a>
+                    <a href="#">Bolo de laranja</a>
                   </h3>
 
-                  <data class="card-price" value="100.85">$100.85</data>
+                  <data class="card-price" value="20,00">R$20,00</data>
 
                 </div>
 
@@ -425,8 +324,8 @@
               <div class="product-card" tabindex="0">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/product-7.jpg" width="312" height="350" loading="lazy"
-                    alt="Nike Basketball shoes" class="image-contain">
+                  <img src="./assets/images/11.png" width="312" height="350" loading="lazy"
+                    alt="Bolo" class="image-contain">
 
                   <ul class="card-action-list">
 
@@ -435,32 +334,9 @@
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
                     </li>
 
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
-
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
-
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                    </li>
 
                   </ul>
                 </figure>
@@ -468,15 +344,14 @@
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Sports</a>
+                    <a href="#" class="card-cat-link">Bolos</a> 
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Nike Basketball shoes</a>
+                    <a href="#">Bolo de Milho</a>
                   </h3>
 
-                  <data class="card-price" value="120.85">$120.85</data>
+                  <data class="card-price" value="20,00">R$20,00</data>
 
                 </div>
 
@@ -487,8 +362,8 @@
               <div class="product-card" tabindex="0">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/product-8.jpg" width="312" height="350" loading="lazy"
-                    alt="Simple Fabric Shoe" class="image-contain">
+                  <img src="./assets/images/12.png" width="312" height="350" loading="lazy"
+                    alt="Bolo" class="image-contain">
 
                   <ul class="card-action-list">
 
@@ -497,31 +372,7 @@
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                    </li>
-
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
-
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
-
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
-
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-1">Adicione ao carrinho</div>
                     </li>
 
                   </ul>
@@ -530,15 +381,14 @@
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link">Bolos</a> 
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Simple Fabric Shoe</a>
+                    <a href="#">Bolo de cenoura com cobertura de chocolate</a>
                   </h3>
 
-                  <data class="card-price" value="100.85">$100.85</data>
+                  <data class="card-price" value="100.85">R$20,00</data>
 
                 </div>
 
@@ -550,232 +400,119 @@
         </div>
       </section>
 
-
-
-      <!-- 
-        - #INSTA POST
-      -->
-
-      <section class="section insta-post">
-
-        <ul class="insta-post-list has-scrollbar">
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-1.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-2.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-3.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-4.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-5.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-6.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-7.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <img src="./assets/images/insta-8.jpg" width="100" height="100" loading="lazy" alt="Instagram post"
-              class="insta-post-banner image-contain">
-
-            <a href="#" class="insta-post-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </section>
-
-    </article>
-  </main>
 
   <!-- #FOOTER  -->
 
   <footer id="contato" class="footer">
     <div class="footer-top section">
-      <div class="container">
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="160" height="50" alt="Footcap logo">
-          </a>
-          <ul class="social-list">
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div class="container" >
         <div class="footer-link-box">
           <ul class="footer-list">
             <li>
-              <p class="footer-list-title">Contact Us</p>
+              <p class="footer-list-title">Contatos</p>
             </li>
             <li>
-              <address class="footer-link">
-                <ion-icon name="location"></ion-icon>
-                <span class="footer-link-text">
-                  2751 S Parker Rd, Aurora, CO 80014, United States
-                </span>
-              </address>
             </li>
             <li>
-              <a href="tel:+557343673257" class="footer-link">
+              <a href="tel:+5573981234567" class="footer-link">
                 <ion-icon name="call"></ion-icon>
-                <span class="footer-link-text">+557343673257</span>
+                <span class="footer-link-text">+5573981234567</span>
               </a>
             </li>
             <li>
-              <a href="mailto:footcap@help.com" class="footer-link">
+              <a href="tel:+5573981673257" class="footer-link">
+                <ion-icon name="call"></ion-icon>
+                <span class="footer-link-text">+5573981673257</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:choconuts@gmail.com" class="footer-link">
                 <ion-icon name="mail"></ion-icon>
-                <span class="footer-link-text">footcap@help.com</span>
+                <span class="footer-link-text">choconuts@gmail.com</span>
               </a>
             </li>
           </ul>
           <ul class="footer-list">
             <li>
-              <p class="footer-list-title">My Account</p>
+              <p class="footer-list-title">Menu</p>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="#inicio" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
-                <span class="footer-link-text">My Account</span>
+                <span class="footer-link-text">Ínicio</span>
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="#encomendas" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
-                <span class="footer-link-text">View Cart</span>
+                <span class="footer-link-text">Encomendas</span>
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="#loja" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
-                <span class="footer-link-text">Wishlist</span>
+                <span class="footer-link-text">Loja</span>
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="#contato" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
-                <span class="footer-link-text">Compare</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-                <span class="footer-link-text">New Products</span>
+                <span class="footer-link-text">Contato</span>
               </a>
             </li>
           </ul>
           <div class="footer-list">
-            <p class="footer-list-title">Opening Time</p>
+            <p class="footer-list-title">Horários de funcionamento</p>
             <table class="footer-table">
               <tbody>
                 <tr class="table-row">
-                  <th class="table-head" scope="row">Mon - Tue:</th>
-                  <td class="table-data">8AM - 10PM</td>
+                  <th class="table-head" scope="row">Seg - Sex:</th>
+                  <td class="table-data">8hrs à 18hrs</td>
                 </tr>
                 <tr class="table-row">
-                  <th class="table-head" scope="row">Wed:</th>
-                  <td class="table-data">8AM - 7PM</td>
-                </tr>
-                <tr class="table-row">
-                  <th class="table-head" scope="row">Fri:</th>
-                  <td class="table-data">7AM - 12PM</td>
-                </tr>
-                <tr class="table-row">
-                  <th class="table-head" scope="row">Sat:</th>
-                  <td class="table-data">9AM - 8PM</td>
-                </tr>
-                <tr class="table-row">
-                  <th class="table-head" scope="row">Sun:</th>
-                  <td class="table-data">Closed</td>
+                  <th class="table-head" scope="row">Sábado:</th>
+                  <td class="table-data">8hrs às 12hrs</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="footer-list">
-            <p class="footer-list-title">Newsletter</p>
             <p class="newsletter-text">
-              Authoritatively morph 24/7 potentialities with error-free partnerships.
+              FAÇA JÁ SUA ENCOMENDA!
             </p>
-            <form action="" class="newsletter-form">
-              <input type="email" name="email" required placeholder="Email Address" class="newsletter-input">
-              <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
+            <div class="footer-brand">
+              <ul class="social-list">
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-pinterest"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
+          
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
-          &copy; 2022 <a href="#" class="copyright-link">codewithsadee</a>. All Rights Reserved
+          &copy; 2024 <a href="#" class="copyright-link">sistemadeconfeitaria</a>. All Rights Reserved
         </p>
       </div>
     </div>
@@ -789,6 +526,5 @@
 
   <!-- link js -->
 
-  <script src="./assets/js/script.js"></script>
 </body>
 </html>
