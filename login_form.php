@@ -6,7 +6,7 @@
     <title>Login Page</title>
     <style>
         body {
-            background-image: url(fundo.jpeg); /* ADICIONAR IMAGEM DE FUNDO */
+            background-image: url('fundo.jpeg');
             background-size: cover;
             margin: 0;
             padding: 0;
@@ -24,60 +24,41 @@
             top: 50%;
             transform: translate(-50%, -50%);
             border-radius: 20px;
-            transition: 1s;
+            opacity: 85%;
             justify-content: center;
             align-items: center;
-            opacity: 85%;
         }
         img {
             width: 150px;
             height: auto;
         }
-        form input[type=text], form input[type=password] { 
+        form input[type="text"], form input[type="password"] {
             width: 100%;
             height: 45px;
-            border: 1px solid rgb(255, 255, 255);
             padding-left: 10px;
             margin: 10px 0;
             border-radius: 5px;
-            transition: 1s;
         }
-        form input[type=submit] {
+        form input[type="submit"] {
             width: 100%;
             height: 50px;
-            cursor: pointer;
             background: rgb(49, 131, 32);
             color: #FFFFFF; 
             border-radius: 20px;
-            transition: 1s;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: rgb(49, 131, 32);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 20px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        @media (max-width: 600px) {
-            form {
-                width: 80%; 
-                padding: 20px;
-            }
         }
     </style>
 </head>
 <body>
-    <form method="post" action="/login">
-        <img src="assets/images/logo.png"> <!-- ADICIONAR IMAGEM DA LOGO EM PNG -->
+    <form method="post" action="login.php">
+        <img src="assets/images/logo.png" alt="Logo">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-        <input type="submit" name="acao" value="Login"> <!-- ADICIONAR FUNÇÃO PRA ENCAMINHAR PARA PÁGINA INICIAL  -->
+        <input type="submit" name="acao" value="Login">
+        <?php if (isset($_GET['error'])): ?>
+            <p style="color: red;">Usuário ou senha incorretos.</p>
+        <?php endif; ?>
     </form>
     <a href="index.html" class="button">Voltar</a>
 </body>
