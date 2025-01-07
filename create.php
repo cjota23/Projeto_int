@@ -4,8 +4,8 @@ extract($_POST); // Extrai os valores enviados pelo formulário
 
 // Criar um novo usuário (CREATE)
 if (isset($BT1)) {
-    $incluir = "INSERT INTO `usuarios`(`nome`, `email`, `senha`) VALUES ('$nome', '$email', '$senha')";
-    banco("localhost", "root", NULL, "confeitaria", $incluir);
+    $incluir = "INSERT INTO `cliente`(`nome`, `email`, `senha`) VALUES ('$nome', '$email', '$senha')";
+    banco("localhost", "root", NULL, "choconuts", $incluir);
     echo "Usuário criado com sucesso!";
 }
 ?>

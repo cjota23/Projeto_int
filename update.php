@@ -3,7 +3,7 @@ include 'function.php';
 
 if (isset($BT1)) {
     $update = "UPDATE `cliente` SET `senha` = '$senha' WHERE `email` = '$email'";
-    banco("localhost", "root", NULL, "confeitaria", $update);
+    banco("localhost", "root", NULL, "choconuts", $update);
     echo "Usuário atualizado com sucesso!";
 } 
 ?>

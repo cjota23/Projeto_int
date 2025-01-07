@@ -4,8 +4,8 @@ extract($_POST); // Extrai os valores enviados pelo formulário
 
 if (isset($BT1)) {
     $consulta = "SELECT * FROM `cliente` WHERE `nome` = '$nome' AND 'senha' = '$senha'";
-    $dados = banco("localhost", "root", NULL, "confeitaria", $consulta);
-        header("Location: index.html");
+    $dados = banco("localhost", "root", NULL, "choconuts", $consulta);
+        header("Location: carrinho.php");
     } else {
         $error = "Usuário ou senha incorretos!";
 }
