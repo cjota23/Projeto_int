@@ -1,138 +1,105 @@
+<?php
+session_start();
+include "function.php";
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    echo "<script>alert('Você precisa estar logado para acessar o carrinho!'); window.location.href='login.php';</script>";
+    exit();
+}
+
+$id_cliente = $_SESSION['id_cliente'];
+
+// Consulta para pegar itens do carrinho do usuário logado
+$consulta = "SELECT c.id_carrinho AS cart_id, p.nome, p.preco, c.qtde 
+            FROM carrinho c
+            JOIN produtos p ON c.id_produtos = p.id_produtos
+            WHERE c.id_cliente = $id_cliente";
+$result = banco("localhost", "root", NULL, "choconuts", $consulta);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/carrinho.css">
     <title>Carrinho de Compras</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .cart-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
-        }
-
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-
-        .cart-item img {
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-            margin-right: 15px;
-        }
-
-        .cart-item-details {
-            flex: 1;
-        }
-
-        .cart-item-name {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .cart-item-price {
-            color: #666;
-        }
-
-        .cart-item-quantity {
-            display: flex;
-            align-items: center;
-        }
-
-        .cart-item-quantity input {
-            width: 40px;
-            text-align: center;
-            margin: 0 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-        }
-
-        .total {
-            text-align: right;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
-        .checkout-button {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 15px;
-            background-color: #28a745;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .checkout-button:hover {
-            background-color: #218838;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Seu Carrinho</h1>
+        <a href="index.php" class="logo">
+            <img src="./assets/images/logo.svg" width="240" height="120"  alt="Choconuts logo">
+        </a>
     </header>
+
     <div class="container">
-        <div class="cart-item">
-            <img src="https://via.placeholder.com/80" alt="Produto 1">
-            <div class="cart-item-details">
-                <div class="cart-item-name">Produto 1</div>
-                <div class="cart-item-price">R$ 50,00</div>
-            </div>
-            <div class="cart-item-quantity">
-                <button>-</button>
-                <input type="number" value="1">
-                <button>+</button>
-            </div>
-        </div>
-
-        <div class="cart-item">
-            <img src="https://via.placeholder.com/80" alt="Produto 2">
-            <div class="cart-item-details">
-                <div class="cart-item-name">Produto 2</div>
-                <div class="cart-item-price">R$ 30,00</div>
-            </div>
-            <div class="cart-item-quantity">
-                <button>-</button>
-                <input type="number" value="1">
-                <button>+</button>
-            </div>
-        </div>
-
-        <div class="total">Total: R$ 80,00</div>
-        <a href="#" class="checkout-button">Finalizar Compra</a>
+    <h3>Carrinho de Compras</h3>
+    <div class="cart-header">
+        <div class="cart-header-item">Item</div>
+        <div class="cart-header-preco">Preço</div>
+        <div class="cart-header-qtde">Quantidade</div>
     </div>
+
+    <?php 
+        // Exibindo os itens do carrinho
+        $total = 0;
+        while ($linha = $result->fetch_assoc()) {
+            // Calculando o subtotal para cada item
+            $subtotal = $linha['preco'] * $linha['qtde'];
+            $total += $subtotal; // Somando o subtotal ao total
+
+            echo "
+            <div class='cart-item'>
+                <div class='cart-item-nome'>
+                    <img src='./assets/images/{$linha['nome']}.png' alt='{$linha['nome']}' class='cart-item-img'>
+                    <p>{$linha['nome']}</p>
+                </div>
+                <div class='cart-item-preco'>
+                    <p>R$" . number_format($linha['preco'], 2) ."</p>
+                    <p>  </p>
+                </div>
+                <div class='cart-item-qtde'>
+                    <form method='post'>
+                        <input type='hidden' name='id' value='{$linha['cart_id']}'>
+                        
+                        <button type='submit' name='menos' class='quantity-button'>-</button>
+                        <span class='quantity-value'>{$linha['qtde']}</span>
+                        <button type='submit' name='mais' class='quantity-button'>+</button>
+                        
+                        <button type='submit' name='remove_cart' class='remove-button'>X</button>
+                    </form>
+                </div>
+            </div>";
+        }
+    ?>
+
+    <!-- Exibindo o total do carrinho -->
+    <div class="total">
+        Total: R$ <?php echo number_format($total, 2); ?>
+    </div>
+
+    <a href="pagamento.php" class="checkout-button">Finalizar Compra</a>
+</div>
+
+
+    <?php
+        //atualização e remoção do carrinho
+        extract($_POST);
+
+        if (isset($mais)) {
+            $update = "UPDATE carrinho SET qtde = qtde + 1 WHERE id_carrinho = $id";
+            banco("localhost", "root", NULL, "choconuts", $update);
+        }
+
+        if (isset($menos)) {
+            $update = "UPDATE carrinho SET qtde = qtde - 1 WHERE id_carrinho = $id";
+            banco("localhost", "root", NULL, "choconuts", $update);
+        }
+
+        if (isset($remove_cart)) {
+            $delete = "DELETE FROM carrinho WHERE id_carrinho = $id";
+            banco("localhost", "root", NULL, "choconuts", $delete);
+        }
+    ?>
 </body>
 </html>

@@ -4,14 +4,16 @@ extract($_POST); // Extrai os valores enviados pelo formulário
 
 // Criar um novo usuário (CREATE)
 if (isset($BT1)) {
-    $incluir = "INSERT INTO `cliente`(`nome`, `email`, `senha`) VALUES ('$nome', '$email', '$senha')";
+    $incluir = "INSERT INTO `cliente`(`nome`, `email`, `senha`, `telefone`) VALUES ('$nome', '$email', '$senha', '$telefone')";
     banco("localhost", "root", NULL, "choconuts", $incluir);
-    echo "Usuário criado com sucesso!";
+    echo "<script>alert('Usuário criado com sucesso!');</script>";
 }
 ?>
 
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Criar Conta</title>
         <style>
             body {
@@ -96,10 +98,11 @@ if (isset($BT1)) {
     </head>
     <body>
         <div class="login-container">
-            <img src="./assets/images/logo.png" alt="Choconuts logo">
+            <img src="./assets/images/logo.svg" alt="Choconuts logo">
             <form action="" method="post" enctype="multipart/form-data">
                 Nome: <input type="text" name="nome" required><br/>
                 E-mail: <input type="email" name="email" required><br/>
+                Telefone: <input type="text" name="telefone" required><br/>
                 Senha: <input type="text" name="senha" required><br/>
                 <input type="submit" value="Criar" name="BT1"> 
             </form>

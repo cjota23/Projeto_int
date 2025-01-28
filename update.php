@@ -4,12 +4,14 @@ include 'function.php';
 if (isset($BT1)) {
     $update = "UPDATE `cliente` SET `senha` = '$senha' WHERE `email` = '$email'";
     banco("localhost", "root", NULL, "choconuts", $update);
-    echo "Usuário atualizado com sucesso!";
+    echo "<script>alert('Usuário atualizado com sucesso!');</script>";
 } 
 ?>
 
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Esqueceu Sua Senha</title>
         <style>
             body {
@@ -94,7 +96,7 @@ if (isset($BT1)) {
     </head>
     <body>
         <div class="login-container">
-            <img src="./assets/images/logo.png"  alt="Choconuts logo">
+            <img src="./assets/images/logo.svg"  alt="Choconuts logo">
             <form action="" method="post" enctype="multipart/form-data">
                 Nome: <input type="text" name="nome" required><br/>
                 E-mail: <input type="email" name="email" required><br/>
