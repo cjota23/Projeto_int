@@ -345,38 +345,6 @@ body {
  * #HEADER
 \*-----------------------------------*/
 
-/* Barra de busca */
-.search-bar {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #fff;
-  max-width: 250px; /* Limita a largura da barra de busca */
-  width: 100%;
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  padding: 5px;
-  font-size: 16px;
-  flex: 1; /* Deixa a barra de busca expandir */
-}
-
-.search-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.search-button ion-icon {
-  font-size: 20px;
-  color: #333;
-}
-
 /* Estilo dos botões de Login e Carrinho */
 .login-btn,
 .cart-btn {

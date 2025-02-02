@@ -1,0 +1,148 @@
+/* Importando fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #eae7e3;
+    color: #5a3e36;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Estilização do Cabeçalho */
+header {
+    background-color: white; /* Cor de fundo suave */
+    color: black;
+    padding: 30px;
+    height: auto; /* Alterado para auto para evitar corte de elementos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinha os itens */
+    border-bottom: 1px solid #eee;
+    font-size: 20px;
+}
+
+/* Estiliza o container dos botões */
+.header-buttons {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.logo img {
+    width: 100px;
+    margin-left: 30px;
+}
+
+/* Seção Sobre Nós */
+.about-us {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #b45f37;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-description {
+    max-width: 500px;
+    text-align: left;
+}
+
+.about-description h2 {
+    font-size: 1.8rem;
+    color: #b45f37;
+    margin-bottom: 10px;
+}
+
+.about-description p, .about-description ul {
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-description ul {
+    list-style-type: none;
+}
+
+.about-description li {
+    padding-left: 15px;
+    text-align: justify;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.about-description li::before {
+    content: '\2022';
+    color: #d98c60;
+    font-weight: bold;
+    display: inline-block; 
+    width: 10px;
+    margin-left: -15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #b45f37;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #8f4a2a;
+    transform: scale(1.05);
+} 
+/* Rodapé */
+.footer {
+    background-color: #b45f37;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
