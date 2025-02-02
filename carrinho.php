@@ -15,6 +15,17 @@ $consulta = "SELECT c.id_carrinho AS cart_id, p.nome, p.preco, c.qtde
             JOIN produtos p ON c.id_produtos = p.id_produtos
             WHERE c.id_cliente = $id_cliente";
 $result = banco("localhost", "root", NULL, "choconuts", $consulta);
+
+if (isset($_POST['cancelar'])) {
+    $limparCarrinho = "DELETE FROM carrinho WHERE id_cliente = $id_cliente";
+    banco("localhost", "root", NULL, "choconuts", $limparCarrinho);
+    header('Location: index.php#loja');
+    exit();
+}
+if (isset($_POST['add'])) {
+    header('Location: index.php#loja');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,12 +39,19 @@ $result = banco("localhost", "root", NULL, "choconuts", $consulta);
 <body>
     <header>
         <a href="index.php" class="logo">
-            <img src="./assets/images/logo.svg" width="240" height="120"  alt="Choconuts logo">
+            <img src="./assets/images/logo.svg" width="200" height="200"  alt="Choconuts logo">
         </a>
+        <h2>Carrinho de Compras</h2>
+        <div class="header-buttons">
+            <form method="post">
+                <button class="btn cancelar" name="cancelar"> Cancelar</button>
+                <button class="btn adicionar" name="add"> Adicionar Mais Itens</button>
+            </form>
+        </div>
     </header>
 
     <div class="container">
-    <h3>Carrinho de Compras</h3>
+    <h3></h3>
     <div class="cart-header">
         <div class="cart-header-item">Item</div>
         <div class="cart-header-preco">Preço</div>

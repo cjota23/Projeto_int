@@ -14,15 +14,8 @@ if (isset($_POST['add_to_cart'])) {
         exit();
     }
 
-    // Verifica se o id_cliente está definido na sessão
-    if (!isset($_SESSION['id_cliente'])) {
-        echo "<script>alert('Erro ao recuperar informações do cliente. Faça login novamente.'); window.location.href='login.php';</script>";
-        exit();
-    }
-
     $id_cliente = $_SESSION['id_cliente'];
 
-    // Verificar se o produto já está no carrinho do usuário
     $consulta = "SELECT id_carrinho FROM carrinho WHERE id_produtos = $id_produtos AND id_cliente = $id_cliente";
     $result = banco("localhost", "root", NULL, "choconuts", $consulta);
 
@@ -119,10 +112,11 @@ if (isset($_POST['add_to_cart'])) {
           <p class="hero-text">
             Receitas caseiras feitas com muito amor e carinho especialmente para você!
           </p>
-          <button href= carrin.html class="btn btn-primary">
-            <a>Sobre nós</a>
-            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-          </button>
+          <button class="btn btn-primary" onclick="location.href='sobre.html'">
+          Sobre nós
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </button>
+
         </div>
       </section>
 

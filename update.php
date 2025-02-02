@@ -1,5 +1,6 @@
 <?php
 include 'function.php';
+extract($_POST); 
 
 if (isset($BT1)) {
     $update = "UPDATE `cliente` SET `senha` = '$senha' WHERE `email` = '$email'";

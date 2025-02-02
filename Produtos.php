@@ -1,9 +1,9 @@
 <?php
 include "function.php";
-extract($_POST);
     $consulta = "SELECT * FROM `produtos` ";
     $dados = banco("localhost", "root", NULL, "choconuts", $consulta);
 
+    extract($_POST);
     if(isset($BT1)) {
         $incluir = "INSERT INTO `produtos`(`nome`, `preco`) VALUES ('$nome', '$preco')";
         banco("localhost", "root", NULL, "choconuts", $incluir);
@@ -12,9 +12,13 @@ extract($_POST);
         $update = "UPDATE `produtos` SET `preco` = '$preco' WHERE `nome` = '$nome'";
         banco("localhost", "root", NULL, "choconuts", $update);  
     }
-    if (isset($BT4)) {
+    if (isset($BT3)) {
         $delete = "DELETE FROM `produtos` WHERE `nome` = '$nome'";
         banco("localhost", "root", NULL, "choconuts", $delete);
+    }
+    if (isset($BT4)) {
+        header('Location: admin.php');
+        exit();
     }
     
     if(isset($_FILES['imagem'])){
@@ -48,37 +52,37 @@ extract($_POST);
             margin: auto;
         }
         table {
-        margin: 20px auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-collapse: collapse;
-        justify-content: center;
-        width: 100%;
-        max-width: 600px;
-        background-color: #ffffff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        overflow: hidden;
-    }
+            margin: 20px auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-    table th, table td {
-        padding: 10px 15px;
-        text-align: left;
-        border: 1px solid #dddddd;
-    }
+        table th, table td {
+            padding: 10px 15px;
+            text-align: left;
+            border: 1px solid #dddddd;
+        }
 
-    table th {
-        background-color: #007bff;
-        color: white;
-    }
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
 
-    table tr:nth-child(even) {
-        background-color: #f3f4f6;
-    }
+        table tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
 
-    table tr:hover {
-        background-color: #e9ecef;
-    }
+        table tr:hover {
+            background-color: #e9ecef;
+        }
         form {
             background-color: #ffffff;
             padding: 20px 30px;
@@ -158,7 +162,7 @@ extract($_POST);
     </style>
 </head>
 <body>
-    <form action="Banco.php" method="post" enctype="multipart/form-data">
+    <form action="#" method="post" enctype="multipart/form-data">
         <a href="index.php" class="logo">
             <img src="./assets/images/logo.svg" width="240" height="120"  alt="Choconuts logo">
         </a>
@@ -189,7 +193,8 @@ echo "</table>";
         <input type="text" name="preco" id="preco">
         <input type="submit" value="Salvar" name="BT1">
         <input type="submit" value="Atualizar" name="BT2">
-        <input type="submit" value="Deletar" name="BT4">
+        <input type="submit" value="Deletar" name="BT3">
+        <input type="submit" value="Voltar" name="BT4">
     </form>
 </body>
 </html>

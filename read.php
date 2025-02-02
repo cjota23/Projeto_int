@@ -2,7 +2,10 @@
 session_start();
 include "function.php";
 
-
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    echo "<script>alert('Você precisa estar logado para acessar!'); window.location.href='login.php';</script>";
+    exit();
+}
 $id_cliente = $_SESSION['id_cliente'];
 
 $consulta = "SELECT * FROM `pedidos` WHERE `id_cliente` = $id_cliente";
@@ -18,79 +21,79 @@ $dados = banco("localhost", "root", NULL, "choconuts", $consulta);
     <title>Detalhes do Pedido</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-}
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
 
-.container {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 600px;
-}
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
 
-.container h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+        .container h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-.container p {
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0;
-}
+        .container p {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
 
-table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #ffffff;
-}
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
 
-table th, table td {
-    text-align: left;
-    padding: 12px;
-    border: 1px solid #ddd;
-}
+        table th, table td {
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
 
-table th {
-    background-color: #f2f2f2;
-    color: #333;
-    font-weight: bold;
-}
+        table th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+        }
 
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
-table tr:hover {
-    background-color: #f1f1f1;
-}
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
 
-.button-container {
-    text-align: center;
-    margin: 20px auto;
-}
+        .button-container {
+            text-align: center;
+            margin: 20px auto;
+        }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-button:hover {
-    background-color: #0056b3;
-}
+        button:hover {
+            background-color: #0056b3;
+        }
 
     </style>
 </head>

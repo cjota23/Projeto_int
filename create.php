@@ -1,8 +1,7 @@
 <?php 
-include "function.php"; // Inclui a função de conexão com o banco
-extract($_POST); // Extrai os valores enviados pelo formulário
+include "function.php";
+extract($_POST); 
 
-// Criar um novo usuário (CREATE)
 if (isset($BT1)) {
     $incluir = "INSERT INTO `cliente`(`nome`, `email`, `senha`, `telefone`) VALUES ('$nome', '$email', '$senha', '$telefone')";
     banco("localhost", "root", NULL, "choconuts", $incluir);

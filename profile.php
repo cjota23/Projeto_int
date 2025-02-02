@@ -47,7 +47,7 @@ if (isset($_POST['logout'])) {
         <li><a href="#" class="active">Meu Perfil</a></li>
         <li><a href="read.php">Meus Pedidos</a></li>
         <li><a href="carrinho.php">Meu Carrinho</a></li>
-        <li><a href="index.php">Tela Inicial</a></li>
+        <li><a href="index.php">Voltar</a></li>
       </ul>
     </div>
 
