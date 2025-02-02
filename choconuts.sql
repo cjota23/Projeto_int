@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/01/2025 às 19:45
+-- Tempo de geração: 02/02/2025 às 20:59
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -41,7 +41,8 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id_carrinho`, `id_produtos`, `qtde`, `nome`, `id_cliente`, `preco`) VALUES
-(8, 7, 1, 'Bolo de laranja', 1, 20.00);
+(10, 15, 1, 'Bolo de milho', 1, 20.00),
+(11, 16, 1, 'Bolo Red Velvet', 1, 20.00);
 
 -- --------------------------------------------------------
 
@@ -82,20 +83,19 @@ CREATE TABLE `pedidos` (
   `status` varchar(50) DEFAULT 'Pedido Confirmado',
   `nome` varchar(50) NOT NULL,
   `preco` decimal(10,2) NOT NULL,
-  `qtde` int(10) NOT NULL
+  `qtde` int(10) NOT NULL,
+  `data` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `pedidos`
 --
 
-INSERT INTO `pedidos` (`id_pedido`, `id_cliente`, `endereco`, `bairro`, `num`, `cep`, `pagamento`, `status`, `nome`, `preco`, `qtde`) VALUES
-(8, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'cartao_credito', 'Pedido Confirmado', 'Bolo de chocolate com nutella', 19.00, 4),
-(9, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'cartao_credito', 'Pedido Confirmado', 'Bolo de laranja', 20.00, 1),
-(11, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido Confirmado', 'Bolo de chocolate com nutella', 19.00, 4),
-(12, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido Confirmado', 'Bolo de laranja', 20.00, 1),
-(14, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido Confirmado', 'Bolo de chocolate com nutella', 19.00, 4),
-(15, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido Confirmado', 'Bolo de laranja', 20.00, 1);
+INSERT INTO `pedidos` (`id_pedido`, `id_cliente`, `endereco`, `bairro`, `num`, `cep`, `pagamento`, `status`, `nome`, `preco`, `qtde`, `data`) VALUES
+(11, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido Confirmado', 'Bolo de chocolate com nutella', 19.00, 4, '2025-01-29 16:42:57'),
+(12, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido saiu para entrega', 'Bolo de laranja', 20.00, 1, '2025-01-29 16:42:57'),
+(14, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido Confirmado', 'Bolo de chocolate com nutella', 19.00, 4, '2025-01-29 16:42:57'),
+(15, 1, 'RUA PAU BRASIL', 'Pequi', '539', '45828-207', 'Cartão de Crédito', 'Pedido Confirmado', 'Bolo de laranja', 20.00, 1, '2025-01-29 16:42:57');
 
 -- --------------------------------------------------------
 
@@ -114,14 +114,15 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produtos`, `nome`, `preco`) VALUES
-(3, 'Bolo de chocolate com nutella', 19),
+(3, 'Bolo de chocolate com nutella', 20),
 (7, 'Bolo de laranja', 20),
 (9, 'Bolo de baunilha com cobertura de chocolate', 20),
 (12, 'Bolo de chocolate com bombom', 20),
 (13, 'Bolo de chocolate com cobertura de chocolate', 20),
 (14, 'Bolo de cenoura com cobertura de chocolate', 20),
 (15, 'Bolo de milho', 20),
-(16, 'Bolo Red Velvet', 20);
+(16, 'Bolo Red Velvet', 20),
+(17, 'Bolo de chocolate com nutella', 20);
 
 --
 -- Índices para tabelas despejadas
@@ -162,7 +163,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id_carrinho` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_carrinho` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
@@ -180,7 +181,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_produtos` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restrições para tabelas despejadas
